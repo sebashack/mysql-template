@@ -16,3 +16,4 @@ services:
       - dev_mysql
     volumes:
       - <path-to-data-dir>:/var/lib/mysql
+      - <path-to-scripts-dir>:/opt/mysql/scripts
