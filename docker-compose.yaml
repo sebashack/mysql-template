@@ -1,0 +1,18 @@
+version: '3.1'
+networks:
+  dev_mysql:
+    external: false
+
+services:
+  db-server:
+    container_name: dev_mysql
+    image: mysql:8.0.23
+    ports:
+      - "127.0.0.1:3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    networks:
+      - dev_mysql
+    volumes:
+      - <path-to-data-dir>:/var/lib/mysql
