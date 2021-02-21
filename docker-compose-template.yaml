@@ -12,7 +12,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_USER: <db-user>
     networks:
       - dev_mysql
     volumes:
