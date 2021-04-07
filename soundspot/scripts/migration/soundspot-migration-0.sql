@@ -15,18 +15,10 @@ CREATE SCHEMA IF NOT EXISTS `soundspot_db` ;
 USE `soundspot_db` ;
 
 -- -----------------------------------------------------
--- Table `soundspot_db`.`table1`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `soundspot_db`.`table1` (
-)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `soundspot_db`.`content_creator`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`content_creator` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `nickname` VARCHAR(45) NOT NULL,
@@ -35,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`content_creator` (
   `preferred_language` VARCHAR(45) NOT NULL,
   `country` VARCHAR(45) NOT NULL,
   `city` VARCHAR(45) NOT NULL,
-  `birthdate` DATETIME NOT NULL,
+  `birthdate` DATE NOT NULL,
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
@@ -47,18 +39,18 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`content_creator` (
 -- Table `soundspot_db`.`show`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`show` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(255) NULL,
-  `created_at` INT NOT NULL,
+  `content_creator_id` INT NOT NULL,
   `cover_image_link` VARCHAR(255) NULL,
   `created_at` DATETIME NOT NULL,
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-  INDEX `fk_show_content_creator_idx` (`created_at` ASC) VISIBLE,
+  INDEX `fk_show_content_creator_idx` (`content_creator_id` ASC) VISIBLE,
   CONSTRAINT `fk_show_content_creator`
-    FOREIGN KEY (`created_at`)
+    FOREIGN KEY (`content_creator_id`)
     REFERENCES `soundspot_db`.`content_creator` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
@@ -68,9 +60,10 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`show` (
 -- Table `soundspot_db`.`album`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`album` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `created_at` DATETIME NOT NULL,
-  `release_date` DATETIME NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `release_date` DATE NOT NULL,
   `content_creator_id` INT NOT NULL,
   `cover_image_link` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
@@ -95,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`podcast_episode` (
   `description` VARCHAR(255) NULL,
   `is_child_friendly` TINYINT NOT NULL,
   `season_number` INT NOT NULL,
-  `episode_number` INT NOT NULL AUTO_INCREMENT,
+  `episode_number` INT NOT NULL,
   `created_at` DATETIME NOT NULL,
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`),
@@ -112,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`podcast_episode` (
 -- Table `soundspot_db`.`musical_piece`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`musical_piece` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `title` VARCHAR(45) NOT NULL,
   `duration` INT NOT NULL,
   `album_id` INT NOT NULL,
@@ -136,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`musical_piece` (
 -- Table `soundspot_db`.`user`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`user` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `nickname` VARCHAR(45) NOT NULL,
@@ -145,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`user` (
   `preferred_language` VARCHAR(45) NOT NULL,
   `payment_method` ENUM("DebitCard", "CreditCard") NULL,
   `is_premium` TINYINT NOT NULL,
-  `birthdate` DATETIME NOT NULL,
+  `birthdate` DATE NOT NULL,
   `created_at` DATETIME NOT NULL,
   `updated_at` DATETIME NULL,
   PRIMARY KEY (`id`),
@@ -158,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`user` (
 -- Table `soundspot_db`.`music_list`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`music_list` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `user_id` INT NOT NULL,
   `created_at` DATETIME NOT NULL,
@@ -178,7 +171,7 @@ ENGINE = InnoDB;
 -- Table `soundspot_db`.`podcast_list`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`podcast_list` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `user_id` INT NOT NULL,
   `created_at` DATETIME NOT NULL,
@@ -223,7 +216,7 @@ ENGINE = InnoDB;
 -- Table `soundspot_db`.`music_list_entry`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`music_list_entry` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `musical_piece_id` INT NOT NULL,
   `music_list_id` INT NOT NULL,
   `created_at` DATETIME NOT NULL,
@@ -248,7 +241,7 @@ ENGINE = InnoDB;
 -- Table `soundspot_db`.`featuring_artist`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `soundspot_db`.`featuring_artist` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `musical_piece_id` INT NOT NULL,
   `created_at` DATETIME NOT NULL,
@@ -295,8 +288,6 @@ CREATE TABLE IF NOT EXISTS `soundspot_db`.`music_like` (
   `updated_at` DATETIME NULL,
   INDEX `fk_music_like_user1_idx` (`user_id` ASC) VISIBLE,
   INDEX `fk_music_like_musical_piece1_idx` (`musical_piece_id` ASC) VISIBLE,
-  UNIQUE INDEX `user_id_UNIQUE` (`user_id` ASC) VISIBLE,
-  UNIQUE INDEX `musical_piece_id_UNIQUE` (`musical_piece_id` ASC) VISIBLE,
   CONSTRAINT `fk_music_like_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `soundspot_db`.`user` (`id`)
