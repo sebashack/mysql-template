@@ -1,6 +1,5 @@
 USE sakila;
 
-
 -- SELECT rental_id, rental_date FROM rental
 -- WHERE return_date BETWEEN '2005-05-01 00:00:00' and '2005-05-31 00:00:00';
 
@@ -14,7 +13,6 @@ USE sakila;
 
 -- SELECT actor.first_name, actor.last_name FROM film, film_actor, actor
 -- WHERE film.title='ACADEMY DINOSAUR' AND film.film_id=film_actor.film_id AND actor.actor_id=film_actor.actor_id;
-
 
 -- SELECT first_name, last_name, return_date
 -- FROM customer c INNER JOIN rental r ON (c.customer_id = r.customer_id)
