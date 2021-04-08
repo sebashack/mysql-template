@@ -1,5 +1,19 @@
 USE soundspot_db;
 
+-- Make sure tables are blank before rerunning this script
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE `show`;
+TRUNCATE TABLE album;
+TRUNCATE TABLE content_creator;
+TRUNCATE TABLE featuring_artist;
+TRUNCATE TABLE music_like;
+TRUNCATE TABLE musical_piece;
+TRUNCATE TABLE participant;
+TRUNCATE TABLE podcast_episode;
+TRUNCATE TABLE podcast_like;
+TRUNCATE TABLE user;
+SET FOREIGN_KEY_CHECKS = 1;
+
 -- Content creator 1
 INSERT INTO content_creator
 (id, name, email, nickname, type, created_at, preferred_language, country, city, birthdate)
@@ -185,7 +199,6 @@ VALUES(14, 'Books that I read', 4, false, 3630, 'I will let you know my books', 
 INSERT INTO podcast_episode
 (id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
 VALUES(15, 'Postmodernisim a critical view', 4, false, 7200, 'Delving deeper into the concept of postmodernism', false, 1, 3, now());
-
 
 -- User 1
 INSERT INTO user
@@ -421,7 +434,6 @@ INSERT INTO podcast_like
 (user_id, podcast_episode_id, is_unliked, created_at)
 VALUES(6, 15, false, now());
 
-
 -- Featuring Artists song 1
 INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
@@ -471,7 +483,6 @@ INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
 VALUES(11, "Drake", 12, now());
 
-
 -- Featuring Artists song 13
 INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
@@ -485,7 +496,6 @@ VALUES(13, "Sean Mendez", 14, now());
 INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
 VALUES(14, "Cristina Aguilera", 14, now());
-
 
 -- Participant episode 1
 INSERT INTO participant
