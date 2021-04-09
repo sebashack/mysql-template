@@ -131,6 +131,100 @@ VALUES (13, 'First episode', 4, true, 1900, 'Inauguration of our podcast', true,
        (14, 'Books that I read', 4, false, 3630, 'I will let you know my books', true, 1, 2, now()),
        (15, 'Postmodernisim a critical view', 4, false, 7200, 'Delving deeper into the concept of postmodernism', false, 1, 3, now());
 
+
+-- Additional shows
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(5, 'Gourment Life', 'A show for those who like cooking', 5, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (16, 'First episode', 5, true, 1834, 'Inauguration of our podcast', true, 1, 1, now()),
+       (17, 'Things I cook', 5, false, 4630, 'I will let you know my recipes', true, 1, 2, now()),
+       (18, 'Cooking, a critical view', 5, false, 7200, 'Delving deeper into the concept of postmodernism cooking', false, 1, 5, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(6, 'Anime trip', 'A show for those who like anime', 2, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (19, 'First episode', 6, true, 2000, 'Inauguration of our podcast', true, 1, 1, now()),
+       (20, 'Things I watch', 6, false, 5030, 'I will let you know what I watch', true, 1, 2, now()),
+       (21, 'Anime, a critical view', 6, false, 6000, 'Delving deeper into the concept of Naruto', false, 1, 6, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(7, 'Travellers', 'A show for those who like travelling', 2, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (22, 'First episode', 7, true, 2000, 'Inauguration of our podcast', true, 1, 1, now()),
+       (23, 'Where I go', 7, false, 5030, 'I will let you know where I go', true, 1, 2, now()),
+       (24, 'Travelling, a critical view', 7, false, 6000, 'Delving deeper into the concept of travelling', false, 1, 7, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(8, 'Wild Life', 'A show for those who like wild life', 5, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (25, 'First episode', 8, true, 2300, 'Inauguration of our podcast', true, 1, 1, now()),
+       (26, 'Where I go in the wild', 8, false, 3680, 'I will let you know where I go', true, 1, 2, now()),
+       (27, 'Wild life, a critical view', 8, false, 4000, 'Delving deeper into the concept of travelling', false, 1, 8, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(9, 'City Life', 'A show for those who like city life', 5, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (28, 'First episode', 9, true, 1800, 'Inauguration of our podcast', true, 1, 1, now()),
+       (29, 'Where I go in the city', 9, false, 3680, 'I will let you know where I go', true, 1, 2, now()),
+       (30, 'City life, a critical view', 9, false, 4000, 'Delving deeper into the concept of city', false, 1, 8, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(10, 'Rusty Life', 'A show for those who like rusty life', 2, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (31, 'First episode', 10, true, 1800, 'Inauguration of our podcast', true, 1, 6, now()),
+       (32, 'Where I go in the rust', 10, false, 3680, 'I will let you know where I go with Rust', true, 1, 7, now()),
+       (33, 'Rusty life, a critical view', 10, false, 7000, 'Delving deeper into the concept of Rust', false, 1, 8, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(11, 'Rusty Life II', 'A show for those who like rusty life', 2, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (34, 'First episode', 11, true, 1800, 'Inauguration of our podcast', true, 1, 6, now()),
+       (35, 'Where I go in the rust', 11, false, 3680, 'I will let you know where I go with Rust', true, 1, 7, now()),
+       (36, 'Rusty life, a critical view', 11, false, 7000, 'Delving deeper into the concept of Rust', false, 1, 8, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(12, 'City Life II', 'A show for those who like city life', 5, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (37, 'First episode', 12, true, 1800, 'Inauguration of our podcast', true, 1, 1, now()),
+       (38, 'Where I go in the city', 12, false, 3680, 'I will let you know where I go', true, 1, 2, now()),
+       (39, 'City life, a critical view', 12, false, 4000, 'Delving deeper into the concept of city', false, 1, 8, now());
+
+INSERT INTO `show`
+(id, name, description, content_creator_id, cover_image_link, created_at)
+VALUES(13, 'Wild Life II', 'A show for those who like wild life', 5, 'https://somecdn.com', now());
+
+INSERT INTO podcast_episode
+(id, title, show_id, is_free, duration, description, is_child_friendly, season_number, episode_number, created_at)
+VALUES (40, 'First episode', 13, true, 2300, 'Inauguration of our podcast', true, 1, 1, now()),
+       (41, 'Where I go in the wild', 13, false, 3680, 'I will let you know where I go', true, 1, 2, now()),
+       (42, 'Wild life, a critical view', 13, false, 4000, 'Delving deeper into the concept of travelling', false, 1, 8, now());
+
+
 -- Users
 INSERT INTO user
 (id, name, email, nickname, country, city, preferred_language, payment_method, is_premium, birthdate, created_at)
@@ -209,14 +303,38 @@ INSERT INTO podcast_like
 VALUES (1, 1, false, now()),
        (1, 3, false, now()),
        (1, 4, false, now()),
-       (1, 6, false, now());
+       (1, 6, false, now()),
+       (1, 21, false, now()),
+       (1, 22, false, now()),
+       (1, 23, false, now()),
+       (1, 24, false, now()),
+       (1, 25, false, now()),
+       (1, 26, false, now()),
+       (1, 27, false, now()),
+       (1, 28, false, now()),
+       (1, 29, false, now()),
+       (1, 30, false, now()),
+       (1, 31, false, now()),
+       (1, 32, false, now()),
+       (1, 33, false, now());
 
 -- Podcast Likes User 2
 INSERT INTO podcast_like
 (user_id, podcast_episode_id, is_unliked, created_at)
 VALUES (2, 7, false, now()),
        (2, 8, false, now()),
-       (2, 9, false, now());
+       (2, 9, false, now()),
+       (2, 3, false, now()),
+       (1, 21, false, now()),
+       (1, 22, false, now()),
+       (1, 23, false, now()),
+       (1, 24, false, now()),
+       (1, 25, false, now()),
+       (1, 26, false, now()),
+       (1, 27, false, now()),
+       (1, 28, false, now()),
+       (1, 29, false, now()),
+       (1, 30, false, now());
 
 -- Podcast Likes User 3
 INSERT INTO podcast_like
@@ -224,14 +342,28 @@ INSERT INTO podcast_like
 VALUES (3, 4, false, now()),
        (3, 5, false, now()),
        (3, 6, false, now()),
-       (3, 7, false, now());
+       (3, 7, false, now()),
+       (5, 28, false, now()),
+       (5, 29, false, now()),
+       (5, 30, false, now());
 
 -- Podcast Likes User 4
 INSERT INTO podcast_like
 (user_id, podcast_episode_id, is_unliked, created_at)
 VALUES (4, 9, false, now()),
        (4, 10, false, now()),
-       (4, 11, false, now());
+       (4, 11, false, now()),
+       (4, 15, false, now()),
+       (4, 28, false, now()),
+       (4, 29, false, now()),
+       (4, 30, false, now()),
+       (4, 17, false, now()),
+       (4, 31, false, now()),
+       (4, 33, false, now()),
+       (4, 34, false, now()),
+       (4, 37, false, now()),
+       (4, 38, false, now()),
+       (4, 39, false, now());
 
 -- Podcast Likes User 5
 INSERT INTO podcast_like
@@ -240,14 +372,67 @@ VALUES (5, 1, false, now()),
        (5, 2, false, now()),
        (5, 12, false, now()),
        (5, 13, false, now()),
-       (5, 14, false, now());
+       (5, 14, false, now()),
+       (5, 17, false, now()),
+       (5, 31, false, now()),
+       (5, 33, false, now()),
+       (5, 34, false, now()),
+       (5, 37, false, now()),
+       (5, 38, false, now()),
+       (5, 39, false, now());
 
 -- Podcast Likes User 6
 INSERT INTO podcast_like
 (user_id, podcast_episode_id, is_unliked, created_at)
-VALUES (6, 4, false, now()),
+VALUES (6, 1, false, now()),
+       (6, 4, false, now()),
        (6, 5, false, now()),
-       (6, 15, false, now());
+       (6, 15, false, now()),
+       (6, 17, false, now()),
+       (6, 31, false, now()),
+       (6, 32, false, now()),
+       (6, 33, false, now()),
+       (6, 34, false, now()),
+       (6, 36, false, now()),
+       (6, 37, false, now()),
+       (6, 38, false, now()),
+       (6, 39, false, now());
+
+-- Podcast Likes User 7
+INSERT INTO podcast_like
+(user_id, podcast_episode_id, is_unliked, created_at)
+VALUES (7, 1, false, now()),
+       (7, 16, false, now()),
+       (7, 12, false, now());
+
+-- Podcast Likes User 8
+INSERT INTO podcast_like
+(user_id, podcast_episode_id, is_unliked, created_at)
+VALUES (8, 16, false, now()),
+       (8, 17, false, now()),
+       (8, 18, false, now());
+
+-- Podcast Likes User 9
+INSERT INTO podcast_like
+(user_id, podcast_episode_id, is_unliked, created_at)
+VALUES (8, 16, false, now()),
+       (8, 17, false, now()),
+       (8, 18, false, now()),
+       (8, 19, false, now()),
+       (8, 20, false, now()),
+       (8, 21, false, now()),
+       (8, 22, false, now()),
+       (8, 23, false, now()),
+       (8, 24, false, now()),
+       (8, 25, false, now()),
+       (8, 26, false, now()),
+       (8, 27, false, now()),
+       (8, 28, false, now()),
+       (8, 29, false, now()),
+       (8, 30, false, now()),
+       (8, 31, false, now()),
+       (8, 32, false, now()),
+       (8, 33, false, now());
 
 -- Featuring Artists song 1
 INSERT INTO featuring_artist
@@ -325,15 +510,33 @@ INSERT INTO participant
 (id, name, podcast_episode_id, created_at)
 VALUES (10, "The doo", 10, now()),
        (11, "Pewdie Pie", 10, now()),
-       (12, "Steve Terreberry", 10, now());
+       (12, "Steve Terreberry", 10, now()),
+       (13, "Tierra Wack", 10, now());
+
+-- Participant episode 11
+INSERT INTO participant
+(id, name, podcast_episode_id, created_at)
+VALUES (14, "Logan Paul", 11, now()),
+       (15, "Richard Sanders", 11, now()),
+       (16, "Carl Stevens", 11, now()),
+       (17, "Steve Terreberry", 11, now());
+
+
+-- Participant episode 12
+INSERT INTO participant
+(id, name, podcast_episode_id, created_at)
+VALUES (18, "Maria Carey", 12, now()),
+       (19, "Ariana Grande", 12, now()),
+       (20, "The bald guy", 10, now()),
+       (21, "Justin Bieber", 12, now());
 
 -- Participant episode 13
 INSERT INTO participant
 (id, name, podcast_episode_id, created_at)
-VALUES(13, "Kmac 2021", 13, now());
+VALUES(22, "Kmac 2021", 13, now());
 
 -- Participant episode 15
 INSERT INTO participant
 (id, name, podcast_episode_id, created_at)
-VALUES (14, "David504", 15, now()),
-       (15, "Goldlink", 15, now());
+VALUES (23, "David504", 15, now()),
+       (24, "Goldlink", 15, now());

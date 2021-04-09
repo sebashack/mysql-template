@@ -1,10 +1,11 @@
 USE soundspot_db;
 
--- Query all participants in first episode of second season by 'Mariana Shostakovich'
+-- Query 1 = CHOSEN
+-- Query all second season's participants by 'Mariana Shostakovich'
 
-SELECT p.id, p.name
-FROM participant p
-INNER JOIN podcast_episode pe ON (p.podcast_episode_id = pe.id)
-INNER JOIN `show` s ON (s.id = pe.show_id)
-INNER JOIN content_creator c ON (c.id = s.content_creator_id)
-WHERE c.name = 'Mariana Shostakovich' AND pe.season_number = 2 AND pe.episode_number = 1;
+SELECT DISTINCT c.name AS host, p.name AS participant FROM participant p, podcast_episode pe, `show` s, content_creator c
+WHERE c.name = 'Mariana Shostakovich'
+  AND pe.season_number = 2
+  AND p.podcast_episode_id = pe.id
+  AND s.content_creator_id = c.id
+  AND s.id = pe.show_id;
