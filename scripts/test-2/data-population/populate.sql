@@ -141,6 +141,18 @@ VALUES (1, 'Rick Sanchez', 'ricksan@gmail.com', 'ricksan', 'south africa', 'pret
        (5, 'Marie Courtier', 'macour@gmail.com', 'macour', 'united states of america', 'compton city', 'english', 'DebitCard', false, '1998-02-03', now()),
        (6, 'Claudia Courier', 'clacour@gmail.com', 'clacour', 'united united kingdom', 'oxford', 'english', 'CreditCard', false, '1999-03-03', now());
 
+INSERT INTO user
+(id, name, email, nickname, country, city, preferred_language, payment_method, is_premium, birthdate, created_at)
+SELECT 7, 'Pedro Morales', 'pemo@gmail.com', 'pemor', country, city, preferred_language, payment_method, is_premium, '2004-05-06', now()
+FROM user
+WHERE id = 1;
+
+INSERT INTO user
+(id, name, email, nickname, country, city, preferred_language, payment_method, is_premium, birthdate, created_at)
+SELECT 8, 'Serena Williams', 'saldali@gmail.com', 'saldali', country, city, preferred_language, payment_method, is_premium, '1990-03-06', now()
+FROM user
+WHERE id = 3;
+
 -- Music Likes User 1
 INSERT INTO music_like
 (user_id, musical_piece_id, is_unliked, created_at)
@@ -241,7 +253,7 @@ VALUES (6, 4, false, now()),
 INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
 VALUES (1, "Monica Howard", 1, now()),
-       (2, "Pamela Hurtado", 1, now());
+       (2, "Pamela Desmonds", 1, now());
 
 -- Featuring Artists song 3
 INSERT INTO featuring_artist
@@ -253,19 +265,19 @@ VALUES (3, "Lil Future", 3, now()),
 INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
 VALUES (5, "Lil Baby", 10, now()),
-       (6, "Pamela Hurtado", 10, now());
+       (6, "Pam Richardson", 10, now());
 
 -- Featuring Artists song 11
 INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
 VALUES (7, "Jenifer Aniston", 11, now()),
-       (8, "Ramon Diaz", 11, now()),
+       (8, "Ramon Hernandez", 11, now()),
        (9, "Selena Gomez", 11, now());
 
 -- Featuring Artists song 12
 INSERT INTO featuring_artist
 (id, name, musical_piece_id, created_at)
-VALUES (10, "Miranda", 12, now()),
+VALUES (10, "Miranda Bloom", 12, now()),
        (11, "Drake", 12, now());
 
 -- Featuring Artists song 13
@@ -294,7 +306,7 @@ VALUES(3, "Richard Bird", 2, now());
 INSERT INTO participant
 (id, name, podcast_episode_id, created_at)
 VALUES (4, "Carol Richards", 5, now()),
-       (5, "Jordan Peterson", 5, now());
+       (5, "Peter Jordanson", 5, now());
 
 -- Participant episode 6
 INSERT INTO participant
@@ -305,7 +317,7 @@ VALUES (6, "Jordan Peterson", 6, now()),
 -- Participant episode 9
 INSERT INTO participant
 (id, name, podcast_episode_id, created_at)
-VALUES (8, "Ramon Diaz", 9, now()),
+VALUES (8, "Ramon Cajal", 9, now()),
        (9, "Augusto Moreau", 9, now());
 
 -- Participant episode 10
@@ -318,10 +330,10 @@ VALUES (10, "The doo", 10, now()),
 -- Participant episode 13
 INSERT INTO participant
 (id, name, podcast_episode_id, created_at)
-VALUES(13, "Pewdie Pie", 13, now());
+VALUES(13, "Kmac 2021", 13, now());
 
 -- Participant episode 15
 INSERT INTO participant
 (id, name, podcast_episode_id, created_at)
-VALUES (14, "Cristina Aguilera", 15, now()),
+VALUES (14, "David504", 15, now()),
        (15, "Goldlink", 15, now());
