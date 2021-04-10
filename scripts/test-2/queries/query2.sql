@@ -1,6 +1,6 @@
 USE soundspot_db;
 
--- Query podcast shows where the episode with the max number of likes is greater than 3;
+-- Query podcast shows where the episode with the max number of likes is greater than 2;
 
 CREATE OR REPLACE VIEW pe_total_likes
 AS
@@ -13,5 +13,5 @@ GROUP BY pe.id;
 SELECT s.id AS show_id, s.name, MAX(tl.total_likes) AS most_likes_in_episode
 FROM `show` s
 INNER JOIN pe_total_likes tl ON (tl.show_id = s.id)
-WHERE ( SELECT MAX(t.total_likes) FROM pe_total_likes t WHERE t.show_id = s.id ) > 3
+WHERE ( SELECT MAX(t.total_likes) FROM pe_total_likes t WHERE t.show_id = s.id ) > 2
 GROUP BY s.id;
