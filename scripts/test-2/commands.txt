@@ -5,4 +5,4 @@ source /opt/mysql/scripts/test-2/migration/soundspot-migration-0.sql;
 source /opt/mysql/scripts/test-2/data-population/populate.sql;
 
 # query
-source /opt/mysql/scripts/test-2/queries/chosen/queryn.sql;
+source /opt/mysql/scripts/test-2/queries/queryn.sql;
