@@ -1,6 +1,6 @@
 USE soundspot_db;
 
--- Query which users have more than 2 likes for a podcast episode that is non-free. Display the id, name of each user
+-- Query which users have more than 1 likes for a podcast episode that is non-free. Display the id, name of each user
 -- and the total number of likes.
 
 SELECT u.id, u.name, COUNT(*) as total_likes

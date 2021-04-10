@@ -1,6 +1,6 @@
 USE soundspot_db;
 
--- For each podcast episode which is "child friendly" query the number of participants pariticipants and its title.
+-- For each podcast episode which is "child friendly" query the number of pariticipants and its title.
 -- Additionally show the names of participants separated by ", ".
 
 CREATE OR REPLACE VIEW participants_in_child_friendly_episode
