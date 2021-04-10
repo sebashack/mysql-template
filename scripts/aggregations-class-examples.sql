@@ -31,8 +31,6 @@ USE sakila;
 -- FROM rental r INNER JOIN customer c ON (c.customer_id  = r.customer_id)
 -- GROUP BY r.customer_id;
 
---  Mostrat en cuantas peliocuas, nombre y apellido
-
 -- SELECT c.first_name, c.last_name, COUNT(*) as total_rentals
 -- FROM rental r INNER JOIN customer c ON (c.customer_id  = r.customer_id)
 -- GROUP BY r.customer_id;
