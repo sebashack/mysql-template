@@ -1,12 +1,15 @@
 USE soundspot_db;
 
--- Query albums that have more than 2 likes and are not free. For each one return the number of likes,
--- its id and its name.
+-- CHOSEN
+-- For each podcast episode which is "child friendly" query the number of participants pariticipants and its title.
+-- Additionally show the names of participants separated by ", ".
 
-SELECT a.id, a.name, COUNT(*) as total_likes
-FROM album a
-INNER JOIN musical_piece mp ON (a.id = mp.album_id)
-INNER JOIN music_like ml ON (mp.id = ml.musical_piece_id)
-WHERE mp.is_free = false
-GROUP BY a.id
-HAVING total_likes > 2;
+CREATE OR REPLACE VIEW participants_in_child_friendly_episode
+AS
+SELECT pe.title, COUNT(*) as num_participants, GROUP_CONCAT(CONCAT(p.name) SEPARATOR ', ') as episode_description
+FROM podcast_episode pe
+INNER JOIN participant p ON (pe.id = p.podcast_episode_id)
+WHERE pe.is_child_friendly = true
+GROUP BY pe.id;
+
+SELECT * FROM participants_in_child_friendly_episode;

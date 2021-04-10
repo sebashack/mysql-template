@@ -1,6 +1,5 @@
 USE soundspot_db;
 
--- Query 2 = CHOSEN
 -- Query podcast shows where the episode with the max number of likes is greater than 2;
 
 CREATE OR REPLACE VIEW pe_total_likes
