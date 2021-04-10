@@ -1,0 +1,8 @@
+# migration
+source /opt/mysql/scripts/test-2/migration/soundspot-migration-0.sql;
+
+# populate
+source /opt/mysql/scripts/test-2/data-population/populate.sql;
+
+# query
+source /opt/mysql/scripts/test-2/queries/chosen/queryn.sql;
